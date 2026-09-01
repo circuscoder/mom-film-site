@@ -43,7 +43,10 @@ input:focus-visible {
 .wrap {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 var(--page-x);
+  /* --page-x-live is set by assets/js/layout.js on load/resize, interpolated
+     from real measured breakpoints; --page-x is the static CSS fallback for
+     no-JS/first-paint-before-script-runs. */
+  padding: 0 var(--page-x-live, var(--page-x));
 }
 
 /* Header */

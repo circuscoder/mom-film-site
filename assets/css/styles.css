@@ -154,6 +154,35 @@ section .body-copy p + p {
   }
 }
 
+.filmmaker-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.filmmaker-photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+  color: var(--rule);
+  font-size: var(--text-lead);
+  font-weight: var(--weight-medium);
+}
+
+.photo-credit {
+  font-size: var(--text-label);
+  color: var(--rule);
+  margin: var(--space-lg) 0 0;
+}
+
+.photo-credit a {
+  color: var(--rule);
+}
+
 .filmmaker .role {
   display: block;
   font-size: var(--text-label);

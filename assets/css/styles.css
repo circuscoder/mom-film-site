@@ -26,14 +26,13 @@ a {
 
 a:hover,
 a:focus-visible {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--rule);
 }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 2px;
 }
 
@@ -105,8 +104,7 @@ input:focus-visible {
 
 .hero .lead {
   font-size: var(--text-lead);
-  font-style: italic;
-  color: #d9d3c6;
+  color: #e6e6e6;
   margin: 0 0 var(--space-lg);
   max-width: 46ch;
 }
@@ -124,44 +122,71 @@ input:focus-visible {
   font-family: var(--font-body);
   font-size: var(--text-small);
   font-weight: var(--weight-medium);
-  letter-spacing: 0.02em;
   padding: 0.9em 1.6em;
   border-radius: var(--radius-md);
   text-decoration: none;
-  border: 1px solid var(--accent);
-  transition: background-color var(--ease-fast), color var(--ease-fast);
+  border: 1px solid var(--ink);
+  transition: background-color var(--ease-fast), color var(--ease-fast), border-color var(--ease-fast);
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--ink);
   color: var(--bg);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--rule);
+  border-color: var(--rule);
   color: var(--bg);
+}
+
+/* Ghost variant for buttons sitting on the hero photo */
+.hero .btn-primary {
+  background: rgba(53, 54, 58, 0.55);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus-visible {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--ink);
 }
 
 /* Section rhythm */
 
 section {
   padding: var(--space-xl) 0;
-  border-top: 1px solid var(--dim);
 }
 
-/* Alternating band rhythm, adapted from forward.movie's light/dark section
-   pattern into this site's dark-only palette: --bg / --panel alternation
-   stands in for their white/gray/dark alternation. */
+/* Alternating band rhythm, matching forward.movie's white / gray / dark
+   sequence directly. */
 .band-alt {
   background: var(--panel);
-  border-top-color: transparent;
+}
+
+.band-dark {
+  background: var(--band-dark);
+  color: var(--band-dark-ink);
+}
+
+.band-dark h2 {
+  color: var(--band-dark-ink);
+}
+
+.band-dark a {
+  color: var(--band-dark-ink);
+}
+
+.band-dark .rule-text {
+  color: var(--band-dark-rule);
 }
 
 section h2 {
   font-size: var(--text-h2);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-bold);
   margin: 0 0 var(--space-md);
   letter-spacing: -0.01em;
 }
@@ -301,23 +326,26 @@ section .body-copy p + p {
 }
 
 .footer-col .btn:hover {
-  background: var(--accent);
+  background: var(--rule);
 }
 
-.btn-pill {
+/* The one deliberate spot of color on the page, matching forward.movie's
+   own single yellow "Support the film!" button. `.btn.btn-pill` (not just
+   `.btn-pill`) so its specificity beats `.footer-col .btn`. */
+.btn.btn-pill {
   display: inline-block;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--accent-ink);
   border: none;
   border-radius: 999px;
   padding: 0.75em 1.5em;
   font-size: var(--text-small);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-bold);
   text-decoration: none;
 }
 
-.btn-pill:hover,
-.btn-pill:focus-visible {
+.btn.btn-pill:hover,
+.btn.btn-pill:focus-visible {
   background: var(--ink);
   color: var(--bg);
 }
@@ -392,7 +420,7 @@ section .body-copy p + p {
   text-align: center;
   margin-top: var(--space-xs);
   cursor: pointer;
-  background: var(--accent);
+  background: var(--ink);
   color: var(--bg);
   font-size: var(--text-body);
   border: none;
@@ -400,7 +428,7 @@ section .body-copy p + p {
 
 .watch-card .btn:hover,
 .watch-card .btn:focus-visible {
-  background: var(--ink);
+  background: var(--rule);
 }
 
 .disclosure {
@@ -415,7 +443,7 @@ section .body-copy p + p {
   padding: var(--space-md);
   background: var(--panel);
   border-radius: var(--radius-sm);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--ink);
 }
 
 .reveal.is-visible {
@@ -423,5 +451,5 @@ section .body-copy p + p {
 }
 
 .reveal a {
-  color: var(--accent);
+  color: var(--ink);
 }

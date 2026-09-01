@@ -1,0 +1,54 @@
+/* MOM site — design tokens.
+   Source: arm/factories/website/letterform-cartographer/design-system-export/tokens/
+   (a real Claude Design export) — colors reused from that source's dark-mode block,
+   promoted here to the default (not an override), per user decision. See prd.md
+   "Design tokens" for the full rationale. */
+
+:root {
+  /* Color */
+  --bg: #14110d;
+  --ink: #f4f1ea;
+  --dim: #4a453c;
+  --accent: #e8674f;
+  --rule: #948a79;
+  --panel: #1e1a15;
+
+  /* Type */
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  --text-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --text-h2: clamp(1.5rem, 3vw, 2rem);
+  --text-lead: 1.25rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-label: 0.75rem;
+
+  --leading-tight: 1.2;
+  --leading-body: 1.6;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 600;
+
+  --tracking-label: 0.12em;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+
+  --content-max: 640px;
+  --page-x: clamp(20px, 5vw, 32px);
+
+  /* Shape */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  /* Motion */
+  --ease-fast: 0.15s ease;
+  --ease-normal: 0.25s ease;
+}

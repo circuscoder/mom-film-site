@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watch the Trailer — MOM</title>
+  <meta name="description" content="Enter your email to watch the MOM trailer.">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="../">MOM</a>
+    </div>
+  </header>
+
+  <main class="watch-page">
+    <div class="wrap">
+      <div class="watch-card">
+
+        <h1>Watch the trailer</h1>
+        <p class="lead">Tell us who you are to continue.</p>
+
+        <form id="watch-form" novalidate>
+          <div class="field">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="first-name" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="last-name" type="text" autocomplete="family-name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <button type="submit" class="btn">Watch the Trailer</button>
+        </form>
+
+        <p class="disclosure">
+          An email address is required to view the trailer. You'll receive one email
+          with the link, and the option to join the MOM newsletter.
+        </p>
+
+        <div id="reveal" class="reveal" role="status">
+          <p>Thanks — here's the trailer:</p>
+          <p>
+            <a id="trailer-link" href="#" target="_blank" rel="noopener">
+              Watch on Vimeo
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Placeholder gate — v1 only. Reveals the link client-side on submit;
+    // does not send email or capture addresses yet. Replace with a real
+    // backend (Substack embed, or a form service) before public launch.
+    // See prd.md "Open questions" for the real Vimeo URL, still TBD.
+    const TRAILER_URL = "https://vimeo.com/PLACEHOLDER";
+
+    document.getElementById("watch-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const link = document.getElementById("trailer-link");
+      link.href = TRAILER_URL;
+      document.getElementById("reveal").classList.add("is-visible");
+      document.getElementById("reveal").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  </script>
+
+</body>
+</html>

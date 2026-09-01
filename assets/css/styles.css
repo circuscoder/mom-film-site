@@ -231,11 +231,15 @@ section .body-copy p + p {
   margin: 0;
 }
 
+/* Measured from forward.movie's live DOM (1440px viewport): the Synopsis
+   companion photo renders at 661x372 — a 1.78:1 (16:9) ratio. */
 .section-photo img {
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
-  border-radius: var(--radius-md);
+  border-radius: 0;
 }
 
 /* Wide, single-column section (text block, then a full-width photo below it —
@@ -253,6 +257,12 @@ section .body-copy p + p {
   max-width: none;
 }
 
+/* Measured from forward.movie's live DOM: the Screenings photo renders at
+   982x391 — a 2.51:1 wide letterbox ratio. */
+.section-photo--wide img {
+  aspect-ratio: 2.51 / 1;
+}
+
 /* "Watch the Trailer" placeholder */
 
 #trailer .wrap {
@@ -267,7 +277,7 @@ section .body-copy p + p {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-md);
+  border-radius: 0;
 }
 
 .video-placeholder figcaption {
@@ -279,9 +289,10 @@ section .body-copy p + p {
 
 /* Filmmakers */
 
+/* Gap measured from forward.movie's live DOM: 34px between columns at 1440px. */
 .filmmakers-grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: 34px;
   grid-template-columns: 1fr;
 }
 
@@ -291,10 +302,12 @@ section .body-copy p + p {
   }
 }
 
+/* Measured from forward.movie's live DOM (1440px viewport): headshots render
+   at exactly 414x414 — a perfect 1:1 square — with border-radius: 0. */
 .filmmaker-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
   object-fit: cover;
   object-position: center 20%;
   margin-bottom: var(--space-sm);

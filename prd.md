@@ -85,8 +85,9 @@ A real behind-the-scenes production still (`assets/img/hero-bts.jpg`, from the M
 production photos) is used full-bleed in the hero, with a dark gradient scrim for text legibility —
 mirrors forward.movie's own hero pattern. Most files in that Dropbox folder are location-scouting
 reference shots (some with technical overlays burned in) rather than usable photography; this one
-was hand-picked as a clean, evocative exception. Filmmaker photos: Shannon Lucio (CC BY-SA 2.0,
-Wikimedia Commons) and Charlie Hofheimer (provided directly by the user).
+was hand-picked as a clean, evocative exception. Filmmaker photos for both Shannon Lucio and
+Charlie Hofheimer were provided directly by the user (2026-09-01) — the earlier Wikimedia Commons
+CC BY-SA photo of Shannon was swapped out once a better one was available.
 
 ### Typography
 

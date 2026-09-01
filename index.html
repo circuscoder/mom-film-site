@@ -51,7 +51,7 @@
 
     <section id="filmmakers">
       <div class="wrap">
-        <h2>The Filmmakers</h2>
+        <h2 class="text-center">The Filmmakers</h2>
         <div class="filmmakers-grid">
           <div class="filmmaker">
             <img class="filmmaker-photo" src="assets/img/shannon-lucio.jpg" alt="Shannon Lucio">
@@ -72,14 +72,45 @@
   </main>
 
   <footer class="site-footer band-alt">
-    <div class="wrap">
-      <p>A film from <strong>The Circus LLC</strong></p>
-      <p>Contact: <a href="mailto:hello@mom-film.example">hello@mom-film.example</a>
+    <div class="wrap footer-grid">
+      <div class="footer-col">
+        <h2>Contact us</h2>
+        <p>Say hello: <a href="mailto:hello@mom-film.example">hello@mom-film.example</a></p>
         <!-- placeholder address — swap for the real MOM contact email -->
-      </p>
-      <p>&copy; The Circus LLC.</p>
+        <a href="#" class="btn btn-pill">Support the film!</a>
+        <!-- placeholder link — swap for the real support/donate destination -->
+      </div>
+      <div class="footer-col">
+        <h2>Receive updates</h2>
+        <form id="newsletter-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="nf-first">First Name</label>
+              <input id="nf-first" name="first-name" type="text" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="nf-last">Last Name</label>
+              <input id="nf-last" name="last-name" type="text" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="field">
+            <label for="nf-email">Email</label>
+            <input id="nf-email" name="email" type="email" autocomplete="email">
+          </div>
+          <button type="submit" class="btn">Send</button>
+        </form>
+        <!-- placeholder form — no real backend wired up yet, see prd.md -->
+      </div>
+      <p class="footer-legal">A film from <strong>The Circus LLC</strong>. &copy; The Circus LLC.</p>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.querySelector('button').textContent = 'Thanks!';
+    });
+  </script>
 
 </body>
 </html>

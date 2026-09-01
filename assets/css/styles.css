@@ -76,12 +76,13 @@ input:focus-visible {
 
 .hero {
   position: relative;
-  min-height: 72vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: flex-end;
   padding: var(--space-xl) 0;
   background-image:
-    linear-gradient(0deg, rgba(20, 17, 13, 0.78) 0%, rgba(20, 17, 13, 0.32) 55%, rgba(20, 17, 13, 0.15) 100%),
+    linear-gradient(0deg, rgba(20, 17, 13, 0.82) 0%, rgba(20, 17, 13, 0.4) 45%, rgba(20, 17, 13, 0.1) 100%),
     url("assets/img/hero-bts.jpg");
   background-size: cover;
   background-position: center 30%;
@@ -229,13 +230,107 @@ section .body-copy p + p {
 /* Footer */
 
 .site-footer {
-  padding: var(--space-lg) 0 var(--space-2xl);
+  padding: var(--space-xl) 0 var(--space-2xl);
   color: var(--rule);
   font-size: var(--text-small);
 }
 
 .site-footer a {
   color: var(--rule);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-xl) var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer-col h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-medium);
+  color: var(--ink);
+  margin: 0 0 var(--space-sm);
+}
+
+.footer-col p {
+  margin: 0 0 var(--space-md);
+}
+
+.footer-col .field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.footer-col .field {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-col .field label {
+  display: block;
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--rule);
+  margin-bottom: var(--space-xs);
+}
+
+.footer-col .field input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--dim);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  padding: 0.6em 0.75em;
+}
+
+.footer-col .btn {
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-small);
+}
+
+.footer-col .btn:hover {
+  background: var(--accent);
+}
+
+.btn-pill {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75em 1.5em;
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+}
+
+.btn-pill:hover,
+.btn-pill:focus-visible {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.footer-legal {
+  grid-column: 1 / -1;
+  margin: var(--space-lg) 0 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--dim);
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* Watch page (email gate) */

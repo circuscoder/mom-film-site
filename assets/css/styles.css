@@ -214,7 +214,7 @@ section .body-copy p + p {
 /* Two-column sections (text + photo), wider than the default .wrap */
 
 .two-col {
-  max-width: 1000px;
+  max-width: var(--content-max);
   display: grid;
   gap: var(--space-xl);
   grid-template-columns: 1fr;
@@ -245,7 +245,7 @@ section .body-copy p + p {
 /* Wide, single-column section (text block, then a full-width photo below it —
    e.g. Screenings) as opposed to .two-col's side-by-side pairing. */
 .wrap-wide {
-  max-width: 1000px;
+  max-width: var(--content-max);
 }
 
 .wrap-wide .body-copy {
@@ -266,7 +266,7 @@ section .body-copy p + p {
 /* "Watch the Trailer" placeholder */
 
 #trailer .wrap {
-  max-width: 1000px;
+  max-width: var(--content-max);
 }
 
 .video-placeholder {

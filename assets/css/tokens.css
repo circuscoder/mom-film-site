@@ -45,8 +45,11 @@
   --space-xl: 64px;
   --space-2xl: 96px;
 
-  --content-max: 640px;
-  --page-x: clamp(20px, 5vw, 32px);
+  /* Measured from forward.movie's live DOM: content width is 1310px at a
+     1440px viewport and 1400px at 1900px — a wide container whose side
+     padding grows with the window, not a fixed narrow column. */
+  --content-max: 1400px;
+  --page-x: clamp(24px, 8vw, 240px);
 
   /* Shape */
   --radius-sm: 4px;

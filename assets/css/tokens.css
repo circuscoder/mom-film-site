@@ -1,17 +1,17 @@
 /* MOM site — design tokens.
    Source: arm/factories/website/letterform-cartographer/design-system-export/tokens/
-   (a real Claude Design export) — colors reused from that source's dark-mode block,
-   promoted here to the default (not an override), per user decision. See prd.md
-   "Design tokens" for the full rationale. */
+   (a real Claude Design export). Light is the default per user decision
+   2026-09-01 (reversing the earlier dark-default choice, to read closer to
+   forward.movie's own light/dark-banded rhythm). See prd.md "Design tokens". */
 
 :root {
   /* Color */
-  --bg: #14110d;
-  --ink: #f4f1ea;
-  --dim: #4a453c;
-  --accent: #e8674f;
-  --rule: #948a79;
-  --panel: #1e1a15;
+  --bg: #f4f1ea;
+  --ink: #14110d;
+  --dim: #b9b2a4;
+  --accent: #c0392b;
+  --rule: #655d50;
+  --panel: #e8e3d8;
 
   /* Type */
   --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;

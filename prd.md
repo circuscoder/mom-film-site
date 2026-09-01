@@ -59,23 +59,34 @@ Source: `/library/web-scraping/scrapling`'s sibling vendored asset —
 `arm/factories/website/letterform-cartographer/design-system-export/tokens/` (a real Claude Design
 export, confirmed with the user 2026-09-01) — **tokens only**, not that project's own layout/
 components (that project is a 3-column documentation-reader tool; MOM's site is a simple single-
-column marketing page). Dark mode is the **default** (a user decision, reversing the source's
-light-default) — the same token set the source calls its dark-mode block becomes MOM's `:root`.
+column marketing page). Light is the **default** (the source's own light-default block) — flipped
+from an initial dark-default choice back to light on 2026-09-01, to read closer to forward.movie's
+own light/dark-banded rhythm.
 
-### Color (dark default)
+### Color (light default)
 
 | Role | Value | Used for |
 | --- | --- | --- |
-| Background | `#14110d` | page background |
-| Ink (text) | `#f4f1ea` | body text |
-| Dim | `#4a453c` | inactive states |
-| Accent | `#e8674f` | links, CTA, hover/focus states, leader/rule accents |
-| Rule / secondary text | `#948a79` | captions, secondary text, hint text |
-| Panel | `#1e1a15` | card/panel surface (e.g. the form container) |
+| Background | `#f4f1ea` | page background |
+| Ink (text) | `#14110d` | body text |
+| Dim | `#b9b2a4` | inactive states |
+| Accent | `#c0392b` | links, CTA, hover/focus states, leader/rule accents |
+| Rule / secondary text | `#655d50` | captions, secondary text, hint text |
+| Panel | `#e8e3d8` | alternating section band, card/panel surface |
 
-A light variant exists in the source tokens (`#f4f1ea` bg / `#14110d` ink / `#c0392b` accent) —
-not used for v1 (dark is the fixed default per user decision), but kept available at
+A dark variant exists in the source tokens (`#14110d` bg / `#f4f1ea` ink / `#e8674f` accent) —
+not used for v1 (light is the fixed default per user decision), but kept available at
 `design-system-export/tokens/colors.css` if a toggle is ever wanted later.
+
+### Hero photo
+
+A real behind-the-scenes production still (`assets/img/hero-bts.jpg`, from the MOM Dropbox —
+`01_SOURCE_LIBRARY/03_PHOTOGRAPHS/Sissy Short Photos/IMG_5272.jpeg`, the proof-of-concept short's
+production photos) is used full-bleed in the hero, with a dark gradient scrim for text legibility —
+mirrors forward.movie's own hero pattern. Most files in that Dropbox folder are location-scouting
+reference shots (some with technical overlays burned in) rather than usable photography; this one
+was hand-picked as a clean, evocative exception. Filmmaker photos: Shannon Lucio (CC BY-SA 2.0,
+Wikimedia Commons) and Charlie Hofheimer (provided directly by the user).
 
 ### Typography
 

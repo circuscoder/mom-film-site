@@ -4,7 +4,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -75,18 +75,22 @@ input:focus-visible {
 /* Hero */
 
 .hero {
-  padding: var(--space-2xl) 0;
-  /* Stands in for forward.movie's full-bleed hero photo until a rights-clear
-     production still is available — a soft radial glow in the accent color
-     instead of a flat plane, so the hero still reads as a "hero," not a
-     header. Swap for background-image: url(...) when a real photo exists. */
-  background: radial-gradient(120% 100% at 50% 0%, rgba(232, 103, 79, 0.14), transparent 60%);
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-xl) 0;
+  background-image:
+    linear-gradient(0deg, rgba(20, 17, 13, 0.78) 0%, rgba(20, 17, 13, 0.32) 55%, rgba(20, 17, 13, 0.15) 100%),
+    url("assets/img/hero-bts.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  color: #f4f1ea;
 }
 
 .hero-inner {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
+  text-align: left;
+  max-width: 640px;
 }
 
 .hero h1 {
@@ -95,20 +99,21 @@ input:focus-visible {
   font-weight: var(--weight-bold);
   letter-spacing: -0.02em;
   margin: 0 0 var(--space-sm);
+  color: #f4f1ea;
 }
 
 .hero .lead {
   font-size: var(--text-lead);
   font-style: italic;
-  color: var(--rule);
-  margin: 0 auto var(--space-lg);
+  color: #d9d3c6;
+  margin: 0 0 var(--space-lg);
   max-width: 46ch;
 }
 
 .hero .cta-row {
   display: flex;
   gap: var(--space-sm);
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Buttons */

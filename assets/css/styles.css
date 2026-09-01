@@ -82,7 +82,7 @@ input:focus-visible {
   padding: var(--space-xl) 0;
   background-image:
     linear-gradient(0deg, rgba(20, 17, 13, 0.82) 0%, rgba(20, 17, 13, 0.4) 45%, rgba(20, 17, 13, 0.1) 100%),
-    url("assets/img/hero-bts.jpg");
+    url("../img/hero-bts.jpg");
   background-size: cover;
   background-position: center 30%;
   color: #f4f1ea;
@@ -199,6 +199,69 @@ section .body-copy p + p {
   margin-top: var(--space-sm);
 }
 
+/* Blurb (short italic line between hero and synopsis) */
+
+#blurb {
+  padding-bottom: 0;
+}
+
+.blurb-text {
+  font-size: var(--text-lead);
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* Two-column sections (text + photo), wider than the default .wrap */
+
+.two-col {
+  max-width: 1000px;
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 760px) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section-photo {
+  margin: 0;
+}
+
+.section-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* "Watch the Trailer" placeholder */
+
+#trailer .wrap {
+  max-width: 1000px;
+}
+
+.video-placeholder {
+  margin: var(--space-lg) 0 0;
+}
+
+.video-placeholder img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.video-placeholder figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--text-small);
+  color: var(--rule);
+  text-align: center;
+}
+
 /* Filmmakers */
 
 .filmmakers-grid {
@@ -214,8 +277,8 @@ section .body-copy p + p {
 }
 
 .filmmaker-photo {
-  width: 96px;
-  height: 96px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius-md);
   object-fit: cover;
   margin-bottom: var(--space-sm);

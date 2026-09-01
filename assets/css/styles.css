@@ -238,6 +238,21 @@ section .body-copy p + p {
   border-radius: var(--radius-md);
 }
 
+/* Wide, single-column section (text block, then a full-width photo below it —
+   e.g. Screenings) as opposed to .two-col's side-by-side pairing. */
+.wrap-wide {
+  max-width: 1000px;
+}
+
+.wrap-wide .body-copy {
+  max-width: 60ch;
+  margin-bottom: var(--space-xl);
+}
+
+.section-photo--wide {
+  max-width: none;
+}
+
 /* "Watch the Trailer" placeholder */
 
 #trailer .wrap {
@@ -281,6 +296,7 @@ section .body-copy p + p {
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-md);
   object-fit: cover;
+  object-position: center 20%;
   margin-bottom: var(--space-sm);
   display: block;
 }
@@ -348,6 +364,17 @@ section .body-copy p + p {
 
 .footer-col p {
   margin: 0 0 var(--space-md);
+}
+
+.footer-col .field-group {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-col .field-group-label {
+  display: block;
+  font-size: var(--text-small);
+  color: var(--ink);
+  margin-bottom: var(--space-xs);
 }
 
 .footer-col .field-row {

@@ -71,7 +71,7 @@
     </section>
 
     <section id="screenings" class="band-dark">
-      <div class="wrap two-col">
+      <div class="wrap wrap-wide">
         <div class="body-copy">
           <h2>Screenings</h2>
           <p>There are no showings currently scheduled.</p>
@@ -79,7 +79,7 @@
             contact <a href="mailto:screenings@mom-film.example">screenings@mom-film.example</a>.
             <!-- placeholder address — swap for the real MOM screenings contact --></p>
         </div>
-        <figure class="section-photo">
+        <figure class="section-photo section-photo--wide">
           <img src="assets/img/screenings.jpg" alt="Behind the scenes on the MOM proof-of-concept short">
         </figure>
       </div>
@@ -118,14 +118,17 @@
       <div class="footer-col">
         <h2>Receive updates</h2>
         <form id="newsletter-form" novalidate>
-          <div class="field-row">
-            <div class="field">
-              <label for="nf-first">First Name</label>
-              <input id="nf-first" name="first-name" type="text" autocomplete="given-name">
-            </div>
-            <div class="field">
-              <label for="nf-last">Last Name</label>
-              <input id="nf-last" name="last-name" type="text" autocomplete="family-name">
+          <div class="field-group">
+            <span class="field-group-label">Name</span>
+            <div class="field-row">
+              <div class="field">
+                <label for="nf-first">First Name</label>
+                <input id="nf-first" name="first-name" type="text" autocomplete="given-name">
+              </div>
+              <div class="field">
+                <label for="nf-last">Last Name</label>
+                <input id="nf-last" name="last-name" type="text" autocomplete="family-name">
+              </div>
             </div>
           </div>
           <div class="field">

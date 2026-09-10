@@ -1,14 +1,21 @@
-# MOM site version links
+# MOM site quick links
 
-Use these side-by-side previews to compare the preserved responsive design with the newsletter-first redesign.
+Use these links to compare the preserved responsive design with the newsletter-first redesign.
 
-- [Version 1: preserved original](https://circuscoder.github.io/mom-film-site/v1/)
-- [Version 2: newsletter-first redesign](https://circuscoder.github.io/mom-film-site/v2/)
-- [Current public root](https://circuscoder.github.io/mom-film-site/) — remains Version 1 until a redesign is approved and promoted.
+- [Version 1: current public site](https://circuscoder.github.io/mom-film-site/)
+- [Version 1 source checkpoint](https://github.com/circuscoder/mom-film-site/tree/archive/v1-responsive)
+- [Version 2 local preview](http://127.0.0.1:8765/) — available while a local server is running from this folder.
+- [Version 2 source branch](https://github.com/circuscoder/mom-film-site/tree/redesign/v2-newsletter)
 
 ## Source checkpoints
 
 - Version 1: branch `archive/v1-responsive`, tag `design-v1-responsive`, commit `ad0f6a6`
 - Version 2: branch `redesign/v2-newsletter`, implementation commit `98ec5db`
 
-The comparison URLs are static snapshots. Updating either working branch does not change its comparison URL until that version is deliberately republished.
+Version 2 has no public deployment. To preview it locally, switch to `redesign/v2-newsletter` and run:
+
+```text
+python -m http.server 8765
+```
+
+Then open the Version 1 public site and Version 2 local preview in separate tabs. Publishing or replacing the public site requires a separate decision.

@@ -1,0 +1,61 @@
+/* MOM site — design tokens.
+   Matches forward.movie's actual palette/rhythm directly (per user decision
+   2026-09-01, dropping the earlier letterform-cartographer token borrow —
+   restrained neutral grayscale with alternating white/gray/charcoal section
+   bands, one small warm accent reserved for a single secondary CTA). */
+
+:root {
+  /* Color */
+  --bg: #f7f7f5;
+  --ink: #1a1a1a;
+  --dim: #c4c4c4;
+  --rule: #5d5d5b;
+  --panel: #e9e9e5;
+  --band-dark: #35363a;
+  --band-dark-ink: #f2f2f2;
+  --band-dark-rule: #b8b8b8;
+  --accent: #f2c230;
+  --accent-ink: #1a1a1a;
+
+  /* Type */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  --text-hero: clamp(2.25rem, 5.5vw, 3.75rem);
+  --text-h2: clamp(1.5rem, 3vw, 2rem);
+  --text-lead: 1.25rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-label: 0.75rem;
+
+  --leading-tight: 1.2;
+  --leading-body: 1.65;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  --tracking-label: 0.08em;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+
+  /* Measured from forward.movie's live DOM: content width is 1310px at a
+     1440px viewport and 1400px at 1900px — a wide container whose side
+     padding grows with the window, not a fixed narrow column. */
+  --content-max: 1400px;
+  --page-x: clamp(24px, 8vw, 240px);
+
+  /* Shape */
+  --radius-sm: 4px;
+  --radius-md: 4px;
+
+  /* Motion */
+  --ease-fast: 0.15s ease;
+  --ease-normal: 0.25s ease;
+}

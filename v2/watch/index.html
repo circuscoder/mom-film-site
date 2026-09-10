@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watch the Trailer — MOM</title>
+  <meta name="description" content="Enter your email to watch the MOM trailer.">
+  <meta name="theme-color" content="#f7f7f5">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/layout.js"></script>
+  <script src="../assets/js/forms.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="wrap"><a class="wordmark" href="../">MOM</a><nav aria-label="Main navigation"><a href="../#newsletter">Join the newsletter</a></nav></div></header>
+  <main class="watch-page" id="main"><div class="wrap"><div class="watch-card">
+    <h1>Watch the trailer</h1>
+    <p class="lead">Tell us who you are to continue.</p>
+    <form id="watch-form" novalidate>
+      <div class="field"><label for="first-name">First name</label><input id="first-name" name="first-name" type="text" autocomplete="given-name" required aria-describedby="watch-status"></div>
+      <div class="field"><label for="last-name">Last name</label><input id="last-name" name="last-name" type="text" autocomplete="family-name" required aria-describedby="watch-status"></div>
+      <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required aria-describedby="watch-status watch-disclosure"></div>
+      <button type="submit" class="btn btn-primary" disabled>Watch the Trailer</button>
+      <p id="watch-status" class="form-status" role="status" aria-live="polite">Trailer access is not available yet. Your details will not be sent. Please check back soon.</p>
+    </form>
+    <p class="disclosure" id="watch-disclosure">An email address is required to view the trailer. You'll receive one email with the link, and the option to join the MOM newsletter.</p>
+    <div id="reveal" hidden><a id="trailer-link" hidden>Watch on Vimeo</a></div>
+  </div></div></main>
+</body>
+</html>

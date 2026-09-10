@@ -1,0 +1,561 @@
+/* MOM site — base styles. Restrained/editorial per prd.md: flat color, no
+   shadows, near-square corners, short opacity/color-only motion. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  font-weight: var(--weight-regular);
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.15em;
+  transition: color var(--ease-fast), text-decoration-color var(--ease-fast);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--rule);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+.wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  /* --page-x-live is set by assets/js/layout.js on load/resize, interpolated
+     from real measured breakpoints; --page-x is the static CSS fallback for
+     no-JS/first-paint-before-script-runs. */
+  padding: 0 var(--page-x-live, var(--page-x));
+}
+
+/* Header */
+
+.site-header {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--dim);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordmark {
+  font-size: var(--text-lead);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.wordmark:hover,
+.wordmark:focus-visible {
+  color: var(--ink);
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-xl) 0;
+  background-image:
+    linear-gradient(0deg, rgba(20, 17, 13, 0.82) 0%, rgba(20, 17, 13, 0.4) 45%, rgba(20, 17, 13, 0.1) 100%),
+    url("../img/hero-bts.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  color: #f4f1ea;
+}
+
+.hero-inner {
+  text-align: left;
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-sm);
+  color: #f4f1ea;
+}
+
+.hero .lead {
+  font-size: var(--text-lead);
+  color: #e6e6e6;
+  margin: 0 0 var(--space-lg);
+  max-width: 46ch;
+}
+
+.hero .cta-row {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: flex-start;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  padding: 0.9em 1.6em;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: background-color var(--ease-fast), color var(--ease-fast), border-color var(--ease-fast);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--rule);
+  border-color: var(--rule);
+  color: var(--bg);
+}
+
+/* Ghost variant for buttons sitting on the hero photo */
+.hero .btn-primary {
+  background: rgba(53, 54, 58, 0.55);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus-visible {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--ink);
+}
+
+/* Section rhythm */
+
+section {
+  padding: var(--space-xl) 0;
+}
+
+/* Alternating band rhythm, matching forward.movie's white / gray / dark
+   sequence directly. */
+.band-alt {
+  background: var(--panel);
+}
+
+.band-dark {
+  background: var(--band-dark);
+  color: var(--band-dark-ink);
+}
+
+.band-dark h2 {
+  color: var(--band-dark-ink);
+}
+
+.band-dark a {
+  color: var(--band-dark-ink);
+}
+
+.band-dark .rule-text {
+  color: var(--band-dark-rule);
+}
+
+section h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-bold);
+  margin: 0 0 var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+section .body-copy {
+  max-width: 60ch;
+}
+
+section .body-copy p + p {
+  margin-top: var(--space-sm);
+}
+
+/* Blurb (short italic line between hero and synopsis) */
+
+#blurb {
+  padding-bottom: 0;
+}
+
+.blurb-text {
+  font-size: var(--text-lead);
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* Two-column sections (text + photo), wider than the default .wrap */
+
+.two-col {
+  max-width: var(--content-max);
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 760px) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section-photo {
+  margin: 0;
+}
+
+/* Measured from forward.movie's live DOM (1440px viewport): the Synopsis
+   companion photo renders at 661x372 — a 1.78:1 (16:9) ratio. */
+.section-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* Wide, single-column section (text block, then a full-width photo below it —
+   e.g. Screenings) as opposed to .two-col's side-by-side pairing. */
+.wrap-wide {
+  max-width: var(--content-max);
+}
+
+.wrap-wide .body-copy {
+  max-width: 60ch;
+  margin-bottom: var(--space-xl);
+}
+
+.section-photo--wide {
+  max-width: none;
+}
+
+/* Measured from forward.movie's live DOM: the Screenings photo renders at
+   982x391 — a 2.51:1 wide letterbox ratio. */
+.section-photo--wide img {
+  aspect-ratio: 2.51 / 1;
+}
+
+/* "Watch the Trailer" placeholder */
+
+#trailer .wrap {
+  max-width: var(--content-max);
+}
+
+.video-placeholder {
+  margin: var(--space-lg) 0 0;
+}
+
+.video-placeholder img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+.video-placeholder figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--text-small);
+  color: var(--rule);
+  text-align: center;
+}
+
+/* Filmmakers */
+
+/* Gap measured from forward.movie's live DOM: 34px between columns at 1440px. */
+.filmmakers-grid {
+  display: grid;
+  gap: 34px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .filmmakers-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Measured from forward.movie's live DOM (1440px viewport): headshots render
+   at exactly 414x414 — a perfect 1:1 square — with border-radius: 0. */
+.filmmaker-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center 20%;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.filmmaker-photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+  color: var(--rule);
+  font-size: var(--text-lead);
+  font-weight: var(--weight-medium);
+}
+
+.photo-credit {
+  font-size: var(--text-label);
+  color: var(--rule);
+  margin: var(--space-lg) 0 0;
+}
+
+.photo-credit a {
+  color: var(--rule);
+}
+
+.filmmaker .bio {
+  margin: 0;
+  color: var(--rule);
+}
+
+.filmmaker .bio strong {
+  color: var(--ink);
+  font-weight: var(--weight-medium);
+}
+
+/* Footer */
+
+.site-footer {
+  padding: var(--space-xl) 0 var(--space-2xl);
+  color: var(--rule);
+  font-size: var(--text-small);
+}
+
+.site-footer a {
+  color: var(--rule);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-xl) var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer-col h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-medium);
+  color: var(--ink);
+  margin: 0 0 var(--space-sm);
+}
+
+.footer-col p {
+  margin: 0 0 var(--space-md);
+}
+
+.footer-col .field-group {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-col .field-group-label {
+  display: block;
+  font-size: var(--text-small);
+  color: var(--ink);
+  margin-bottom: var(--space-xs);
+}
+
+.footer-col .field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.footer-col .field {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-col .field label {
+  display: block;
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--rule);
+  margin-bottom: var(--space-xs);
+}
+
+.footer-col .field input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--dim);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  padding: 0.6em 0.75em;
+}
+
+.footer-col .btn {
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-small);
+}
+
+.footer-col .btn:hover {
+  background: var(--rule);
+}
+
+/* The one deliberate spot of color on the page, matching forward.movie's
+   own single yellow "Support the film!" button. `.btn.btn-pill` (not just
+   `.btn-pill`) so its specificity beats `.footer-col .btn`. */
+.btn.btn-pill {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75em 1.5em;
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+}
+
+.btn.btn-pill:hover,
+.btn.btn-pill:focus-visible {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.footer-legal {
+  grid-column: 1 / -1;
+  margin: var(--space-lg) 0 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--dim);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Watch page (email gate) */
+
+.watch-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.watch-card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+.watch-card h1 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-medium);
+  margin: 0 0 var(--space-xs);
+}
+
+.watch-card .lead {
+  color: var(--rule);
+  margin: 0 0 var(--space-lg);
+}
+
+.field {
+  margin-bottom: var(--space-sm);
+}
+
+.field label {
+  display: block;
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--rule);
+  margin-bottom: var(--space-xs);
+}
+
+.field input {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--dim);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  padding: 0.75em 0.9em;
+}
+
+.field input::placeholder {
+  color: var(--rule);
+}
+
+.watch-card .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: var(--space-xs);
+  cursor: pointer;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: var(--text-body);
+  border: none;
+}
+
+.watch-card .btn:hover,
+.watch-card .btn:focus-visible {
+  background: var(--rule);
+}
+
+.disclosure {
+  font-size: var(--text-small);
+  color: var(--rule);
+  margin-top: var(--space-lg);
+}
+
+.reveal {
+  display: none;
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--panel);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--ink);
+}
+
+.reveal.is-visible {
+  display: block;
+}
+
+.reveal a {
+  color: var(--ink);
+}

@@ -5,151 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MOM — a film</title>
   <meta name="description" content="MOM is an independent narrative feature about a woman who returns home to search for her missing sister, and the family she spent years trying to escape.">
+  <meta name="theme-color" content="#f7f7f5">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/layout.js"></script>
+  <script src="assets/js/signup-config.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
 </head>
 <body>
-
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap">
-      <a class="wordmark" href="./">MOM</a>
-      <nav>
-        <a href="watch/" class="btn btn-primary">Watch the Trailer</a>
+      <a class="wordmark" href="./" translate="no">MOM</a>
+      <nav aria-label="Main navigation">
+        <a href="watch/">Watch the Trailer</a>
+        <a href="#newsletter" class="nav-signup">Join the newsletter</a>
       </nav>
     </div>
   </header>
-
-  <main>
-
-    <section class="hero" style="border-top:none;">
+  <main id="main">
+    <section class="hero" aria-labelledby="film-title">
+      <div class="hero-visual" aria-hidden="true"><img src="assets/img/hero-bts.jpg" alt="" width="1920" height="1440" fetchpriority="high"></div>
       <div class="wrap hero-inner">
-        <h1>MOM</h1>
-        <p class="lead">A woman returns home to search for her missing sister with
-          developmental disabilities and mental illness, forcing her to confront the
-          childhood trauma and family system she spent years trying to escape.</p>
-        <div class="cta-row">
-          <a href="watch/" class="btn btn-primary">Watch the Trailer</a>
+        <div class="hero-copy">
+          <p class="eyebrow">An independent film by Shannon Lucio</p>
+          <h1 id="film-title" translate="no">MOM</h1>
+          <p class="lead">She left home to escape her family.<br>Now her sister is missing.</p>
+        </div>
+        <div class="hero-signup" id="newsletter">
+          <h2>Stay close to the story.</h2>
+          <p>Join the MOM newsletter for film updates and a look behind the scenes.</p>
+          <form id="hero-newsletter-form" class="newsletter-form" data-newsletter novalidate>
+            <label for="hero-email">Email address</label>
+            <div class="signup-row">
+              <input id="hero-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required aria-describedby="hero-consent hero-status">
+              <button type="submit" class="btn btn-primary" disabled>Join the newsletter</button>
+            </div>
+            <p class="consent" id="hero-consent">By joining, you agree to receive the MOM newsletter. Unsubscribe at any time.</p>
+            <p class="form-status" id="hero-status" role="status" aria-live="polite">Signup is currently unavailable. Please check back soon.</p>
+          </form>
         </div>
       </div>
     </section>
-
-    <section id="blurb" style="border-top:none;">
-      <div class="wrap">
-        <p class="blurb-text"><em><strong>MOM</strong> is an independent narrative feature
-          about caregiving, family, and the ties that hold people together even when
-          they've spent years trying to escape them.</em></p>
-      </div>
-    </section>
-
-    <section id="synopsis" class="band-alt">
+    <section id="blurb"><div class="wrap"><p class="blurb-text">A story about caregiving, family, and the ties that hold us together.</p></div></section>
+    <section id="synopsis">
       <div class="wrap two-col">
+        <figure class="section-photo"><img src="assets/img/synopsis.jpg" alt="Behind the scenes on the MOM proof-of-concept short" width="900" height="675" loading="lazy"></figure>
         <div class="body-copy">
           <h2>Synopsis</h2>
-          <p>Elizabeth Rocha, a 31-year-old actress in Los Angeles, has built her life
-            around control, ambition, and distance from the family chaos she escaped.
-            When her sister Mary — developmentally disabled and newly psychotic — runs
-            away in a winter storm, Elizabeth is forced to return home and lead the
-            search herself. As she moves through group homes, shelters, old
-            relationships, and the wreckage of her childhood home, the search for Mary
-            becomes a reckoning with the mother who failed them both — and with the
-            promise Elizabeth once made that she would never leave Mary behind.</p>
-        </div>
-        <figure class="section-photo">
-          <img src="assets/img/synopsis.jpg" alt="Behind the scenes on the MOM proof-of-concept short">
-        </figure>
-      </div>
-    </section>
-
-    <section id="trailer">
-      <div class="wrap">
-        <h2 class="text-center">Watch the Trailer</h2>
-        <figure class="video-placeholder">
-          <img src="assets/img/watch-section.jpg" alt="MOM production still, standing in for the trailer embed">
-          <figcaption>Trailer embed goes here once the Vimeo link is ready — see prd.md.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="screenings" class="band-dark">
-      <div class="wrap wrap-wide">
-        <div class="body-copy">
-          <h2>Screenings</h2>
-          <p>There are no showings currently scheduled.</p>
-          <p>Interested in hosting a private screening, or have a question? Please
-            contact <a href="mailto:screenings@mom-film.example">screenings@mom-film.example</a>.
-            <!-- placeholder address — swap for the real MOM screenings contact --></p>
-        </div>
-        <figure class="section-photo section-photo--wide">
-          <img src="assets/img/screenings.jpg" alt="Behind the scenes on the MOM proof-of-concept short">
-        </figure>
-      </div>
-    </section>
-
-    <section id="filmmakers">
-      <div class="wrap">
-        <h2 class="text-center">The Filmmakers</h2>
-        <div class="filmmakers-grid">
-          <div class="filmmaker">
-            <img class="filmmaker-photo" src="assets/img/shannon-lucio.jpg" alt="Shannon Lucio">
-            <p class="bio"><strong>Shannon Lucio</strong> is the writer and director of
-              <em>MOM</em>. She is known as an actress for her work on <em>True
-              Blood</em>.</p>
-          </div>
-          <div class="filmmaker">
-            <img class="filmmaker-photo" src="assets/img/charlie-hofheimer.jpg" alt="Charlie Hofheimer">
-            <p class="bio"><strong>Charlie Hofheimer</strong> produces <em>MOM</em>. He
-              is known as an actor for his work on <em>Mad Men</em>.</p>
-          </div>
+          <p>Elizabeth Rocha, a 31-year-old actress in Los Angeles, has built her life around control, ambition, and distance from the family chaos she escaped.</p>
+          <p>When her sister Mary, who has developmental disabilities and is experiencing psychosis, runs away in a winter storm, Elizabeth is forced to return home and lead the search herself.</p>
+          <p>The search becomes a reckoning with the mother who failed them both, and with the promise Elizabeth once made that she would never leave Mary behind.</p>
         </div>
       </div>
     </section>
-
+    <section id="trailer"><div class="wrap"><div class="trailer-scene">
+      <img src="assets/img/watch-section.jpg" alt="MOM production still, standing in for the trailer embed" width="1400" height="1050" loading="lazy">
+      <div class="trailer-copy"><h2>A first look at MOM.</h2><a href="watch/" class="text-link">Watch the Trailer <span aria-hidden="true">↗</span></a></div>
+    </div></div></section>
+    <section id="filmmakers"><div class="wrap">
+      <h2>The Filmmakers</h2>
+      <div class="filmmakers-grid">
+        <article class="filmmaker">
+          <img class="filmmaker-photo" src="assets/img/shannon-lucio.jpg" alt="Shannon Lucio" width="444" height="700" loading="lazy">
+          <div><h3>Shannon Lucio</h3><p class="role">Writer &amp; director</p><p class="bio">Shannon is the writer and director of <em>MOM</em>. She is known as an actress for her work on <em>True Blood</em>.</p></div>
+        </article>
+        <article class="filmmaker">
+          <img class="filmmaker-photo" src="assets/img/charlie-hofheimer.jpg" alt="Charlie Hofheimer" width="560" height="700" loading="lazy">
+          <div><h3>Charlie Hofheimer</h3><p class="role">Producer</p><p class="bio">Charlie produces <em>MOM</em>. He is known as an actor for his work on <em>Mad Men</em>.</p></div>
+        </article>
+      </div>
+    </div></section>
+    <section id="screenings"><div class="wrap screenings-inner"><h2>Screenings</h2><p>There are no showings currently scheduled. Join the newsletter to hear when there’s news.</p></div></section>
   </main>
-
-  <footer class="site-footer band-alt">
-    <div class="wrap footer-grid">
-      <div class="footer-col">
-        <h2>Contact us</h2>
-        <p>Say hello: <a href="mailto:hello@mom-film.example">hello@mom-film.example</a></p>
-        <!-- placeholder address — swap for the real MOM contact email -->
-        <a href="#" class="btn btn-pill">☕ Support the film!</a>
-        <!-- placeholder link — swap for the real support/donate destination -->
-      </div>
-      <div class="footer-col">
-        <h2>Receive updates</h2>
-        <form id="newsletter-form" novalidate>
-          <div class="field-group">
-            <span class="field-group-label">Name</span>
-            <div class="field-row">
-              <div class="field">
-                <label for="nf-first">First Name</label>
-                <input id="nf-first" name="first-name" type="text" autocomplete="given-name">
-              </div>
-              <div class="field">
-                <label for="nf-last">Last Name</label>
-                <input id="nf-last" name="last-name" type="text" autocomplete="family-name">
-              </div>
-            </div>
-          </div>
-          <div class="field">
-            <label for="nf-email">Email</label>
-            <input id="nf-email" name="email" type="email" autocomplete="email">
-          </div>
-          <button type="submit" class="btn">Send</button>
-        </form>
-        <!-- placeholder form — no real backend wired up yet, see prd.md -->
-      </div>
-      <p class="footer-legal">A film from <strong>The Circus LLC</strong>. &copy; The Circus LLC.</p>
+  <footer class="site-footer"><div class="wrap footer-grid">
+    <div class="footer-intro"><h2>The story continues.</h2><p>Film news. Behind the scenes.<br>From the people making MOM.</p></div>
+    <div class="footer-col">
+      <form id="newsletter-form" class="newsletter-form" data-newsletter novalidate>
+        <!-- Retain existing field IDs/names/order for integration. Names are not requested by default. -->
+        <input id="nf-first" name="first-name" type="hidden" value="">
+        <input id="nf-last" name="last-name" type="hidden" value="">
+        <label for="nf-email">Email address</label>
+        <div class="signup-row">
+          <input id="nf-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required aria-describedby="nf-consent nf-status">
+          <button type="submit" class="btn btn-primary" disabled>Join the newsletter</button>
+        </div>
+        <p class="consent" id="nf-consent">By joining, you agree to receive the MOM newsletter. Unsubscribe at any time.</p>
+        <p class="form-status" id="nf-status" role="status" aria-live="polite">Signup is currently unavailable. Please check back soon.</p>
+      </form>
     </div>
-  </footer>
-
-  <script>
-    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      this.querySelector('button').textContent = 'Thanks!';
-    });
-  </script>
-
+    <div class="footer-legal"><p>A film from <strong>The Circus LLC</strong>.</p><a href="#main">Back to top ↑</a><p>&copy; The Circus LLC.</p></div>
+  </div></footer>
 </body>
 </html>

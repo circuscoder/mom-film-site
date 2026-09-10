@@ -1,5 +1,22 @@
 # MOM Site — PRD
 
+## V2 amendment (2026-09-09)
+
+`REDESIGN_PLAN.md` supersedes the historical v1 requirements below for this pass.
+The homepage now prioritizes newsletter signup in the hero and footer. It preserves
+the existing photography, system font, light neutral palette with yellow accent,
+routes/anchors, and measured `layout.js` spacing. Photo parallax is a progressive
+desktop enhancement with a static mobile/reduced-motion fallback.
+
+No fake signup or trailer success is allowed. Newsletter integration is prepared in
+`assets/js/signup-config.js` but needs an actual provider endpoint/contract. `/watch/`
+preserves first-name, last-name, email order and reports unavailable access until
+real delivery is connected. Placeholder contact/support links are removed.
+
+The required deliverable is a locally committed v2 on `redesign/v2-newsletter`, not
+a deployment. See `README.md` and `REDESIGN_REVIEW.md` for the current implementation
+and validation. The original v1 description below is retained as planning history.
+
 Last updated: 2026-09-01
 
 ## Problem / why this exists

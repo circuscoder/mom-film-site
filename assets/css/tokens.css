@@ -6,11 +6,11 @@
 
 :root {
   /* Color */
-  --bg: #ffffff;
+  --bg: #f7f7f5;
   --ink: #1a1a1a;
   --dim: #c4c4c4;
-  --rule: #6b6b6b;
-  --panel: #e3e4e6;
+  --rule: #5d5d5b;
+  --panel: #e9e9e5;
   --band-dark: #35363a;
   --band-dark-ink: #f2f2f2;
   --band-dark-rule: #b8b8b8;
